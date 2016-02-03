@@ -1,0 +1,56 @@
+﻿@using Shopping_And_Bidding.Models;
+@{
+    ViewBag.Title = "SiteRules";
+    if ((user)Session["user"] != null)
+    {
+        Layout = "~/Views/Shared/Profile.cshtml";
+    }
+    else if ((user)Session["user"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<header>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-3">
+            <a href="/User/Index">
+                <img src="~/Images/Bidding-for-Good-Logo[1].jpg"
+                     style="border-radius:20px;border:solid"
+                     width="150px" height="125px" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="wrapper" style="margin-top:5px">
+                <div class="bannerad">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:100px"
+                         data-ad-client="ca-pub-4560135486422930"
+                         data-ad-slot="8876535802"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <br />
+    <div class="row">
+        <div class="col-md-7" style="margin:auto">
+            <h2>Site Rules</h2>
+            <p>1.Only one account is allowed per person.
+                <br /><br />2.Collusion, defined as two or more users working together in a QuiBids auction, is prohibited and can result in disabled accounts and canceled orders.
+                <br /><br />3.Only 12 wins are allowed per account over a 28 day time period.
+                <br /><br />4.Only 1 win of the same product with a value price of over $285.00 is allowed over a 28 day time period (e.g. you can only win a certain Playstation once every 28 days).
+                <br /><br />5.Only 12 wins are allowed per day.
+                <br /><br />6.Only 1 win is allowed per 28 days on items with a value price $1,000.00 or greater.
+                <br /><br />7.A user may only win one 250 Voucher Bid auction and two 100 Voucher Bid auctions every 24 hours. Additionally, a user may only win one 500 Voucher Bid auction and one 1000 Voucher Bid auction every 7 days.
+                <br /><br />8.No bots of any kind are allowed when using the site.
+                <br /><br />9.QuiBids employees and their family members (defined as parents, spouse, siblings and children) and any person residing in the same household as employees may not under any circumstances participate in QuiBids auctions.
+                <br /><br />10.A user may only post one review per product. Users must be logged into their account and have made a purchase to comment on the product. Only reviews pertaining to the product and not the auction experience, customer service, shipping and handling, or delivery will be accepted. To learn more about posting reviews, please visit the Reviews Rules page.</p>
+            <br /><h3>Imprtant</h3><p>Please note that breaking these rules (e.g. by creating multiple accounts for one person or by using bots) violates our terms & conditions and will result in the disabling of all of that customer’s accounts. Any items won while in violation of the terms & conditions are not valid and will not be fulfilled. Further, refunds will only be processed for the amounts paid for these items and not for any bids used to win these items while violating the terms & conditions.</p>
+        </div>
+    </div>
+</section>

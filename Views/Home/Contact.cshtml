@@ -1,0 +1,46 @@
+﻿@using Shopping_And_Bidding.Models;
+@{
+    ViewBag.Title = "Contact";
+    if ((user)Session["user"] != null)
+    {
+        Layout = "~/Views/Shared/Profile.cshtml";
+    }
+    else if ((user)Session["user"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<header>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-3">
+            <a href="/User/Index">
+                <img src="~/Images/Bidding-for-Good-Logo[1].jpg"
+                     style="border-radius:20px;border:solid"
+                     width="150px" height="125px" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="wrapper" style="margin-top:5px">
+                <div class="bannerad">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:100px"
+                         data-ad-client="ca-pub-4560135486422930"
+                         data-ad-slot="8876535802"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <br /><br />
+    <h2 style="color:darkorange">Contact us</h2>
+    <h5>You can contact us on below emails</h5>
+    <br />
+    <a href="#"><h5>mcsf14m041@pucit.edu.pk</h5></a>
+    <a href="#"><h5>hafiz431@yahoo.com</h5></a>
+    <p style="color:royalblue">Phone#<p>+92300-4827612</p>
+</section>

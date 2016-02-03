@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Profile.cshtml";
+}
+@model Shopping_And_Bidding.Models.user
+    <body>
+    <div style="margin-top:40px">
+        <h3>Profile Setting</h3>
+        <p style="color:darkslategrey">here you can change your profile</p>
+        <section>
+            <br /><br />
+            <form class="form-horizontal" method="post" action="/User/Save/@Model.Uid">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="hidden" class="form-control" name="Uid" id="Uid" value="@Model.Uid">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputName3" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" required="required" class="form-control" name="name" id="name" value="@Model.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputpassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" required="required" name="password" class="form-control" id="p" value="@Model.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputDOB3" class="col-sm-2 control-label">DOB</label>
+                    <div class="col-sm-10">
+                        <input type="datetime" required="required" name="DOB" class="form-control" value="@Model.DOB" id="DOB">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputphone3" class="col-sm-2 control-label">Phone_no</label>
+                    <div class="col-sm-10">
+                        <input type="text" required="required" name="phone_no" class="form-control" value="@Model.phone_no" id="ph">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="hidden" name="Role" class="form-control" value="2" id="role" placeholder="Role">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Update</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <script>
+            $("#cp").focusout(function () {
+                var a = document.getElementById("p");
+                var b = document.getElementById("cp");
+                if (a.value != b.value) {
+                    alert("Password not Matched");
+                }
+            })
+            $("#e").focusout(function () {
+                var a = document.getElementById("e").value;
+                if (!a.contains(".com") || !a.contains(".pk")) {
+                    alert("Invalid Email");
+                }
+            })
+        </script>
+    </div>
+</body>

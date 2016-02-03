@@ -1,0 +1,158 @@
+﻿@using Shopping_And_Bidding.Models;
+@{
+    user u = (user)Session["user"];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/half-slider.css" rel="stylesheet" />
+    <link href="~/Content/Search.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/npm.js"></script>
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/Timer.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+</head>
+<body class="bodyBackGround" style="background-image: url('../../Images/background.jpg'); ">
+    <div class="navbar navbar-color navbar-fixed-top">
+        <nav class="navbar navbar-default" style="background-color:gainsboro">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/Home" style="color:midnightblue"><span class="glyphicon glyphicon-home"> Home</span></a></li>
+                    <li><a href="/Home/About" style="color:midnightblue"> About</a></li>
+                </ul>q
+                <ul class="nav navbar-nav navbar-right" style="">
+                    <li style="margin-top:8px">
+                        @if (u.role == 2)
+                        {
+                            <form action="/User/Search" class="form">
+                                <div class="form-group has-feedback">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                    <b>Search By:</b>@Html.RadioButton("SearchBy", "Category", true)<text style="color:darkblue">category</text>
+                                    @Html.RadioButton("SearchBy", "price")<text style="color:darkblue">Price</text>
+                                    @Html.RadioButton("SearchBy", "Title")<text style="color:darkblue">Title</text>
+                                </div>
+                            </form>
+                        }
+                        else if (u.role == 1)
+                        {
+                            <form action="/Admin/Search" class="form">
+                                <div class="form-group has-feedback">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                    <b>Search By:</b>@Html.RadioButton("SearchBy", "Category", true)<text style="color:darkblue">category</text>
+                                    @Html.RadioButton("SearchBy", "price")<text style="color:darkblue">Price</text>
+                                    @Html.RadioButton("SearchBy", "Title")<text style="color:darkblue">Title</text>
+                                </div>
+                            </form>
+                        }
+
+                    </li>
+                    <li><a class="fancybox" rel="group" href="~/Images/@u.image"><img src="~/Images/@u.image" class="fancybox" style="border-radius:50%" class="img-circle" width="50px" height="50px" /></a></li>
+                    <li class="dropdown" style="">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:midnightblue">Hi @u.name <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="background-color:antiquewhite">
+                            <li style="color:darkseagreen"><h4><span class="glyphicon glyphicon-tasks"> My Account</span></h4></li>
+
+                            @if (u.role == 2)
+                            {
+                                <li><a href="/User/ShowCart/@u.Uid">Show Cart</a></li>
+                                <li><a href="/User/Post">Posts</a></li>
+                                <li><a href="/User/Setting/@u.Uid">Setting</a></li>
+                            }
+                            else if (u.role == 1)
+                            {
+                                <li><a href="/Admin/Product">Stock</a></li>
+                                <li><a href="/Admin/Users">Users</a></li>
+                                <li><a href="/Admin/Post">Posts</a></li>
+                                <li><a href="/User/Setting/@u.Uid">Setting</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="/Login/Logout" style="color:midnightblue"><span class="glyphicon glyphicon-log-in"> Logout</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <br />
+        <footer style="background-color:black">
+            <div class="row">
+                <div class="col-md-2 style=" margin:auto">
+                    <h4 style="color:white" class="col-lg-offset-1">Quick Links</h4>
+                    <ul>
+                        <li><a href="/Login/Register" style="color:cadetblue">Join Now!</a></li>
+                        <li><a href="/Home/BidForGood" style="color:cadetblue">What is BidForGood?</a></li>
+                        <li><a href="/Home/LiveAuction" style="color:cadetblue">Live Auctions</a></li>
+                        <li><a href="#" style="color:cadetblue">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="margin:auto">
+                    <h4 style="color:white">About</h4>
+                    <ul>
+                        <li><a href="/Home/About" style="color:cadetblue">About us</a></li>
+                        <li><a href="/Home/Contact" style="color:cadetblue">Contact Info</a></li>
+                        <li><a href="/Home/Policy" style="color:cadetblue">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="margin:auto">
+                    <h4 style="color:white">Support</h4>
+                    <ul>
+                        <li><a href="/Home/BidForGood" style="color:cadetblue">Help</a></li>
+                        <li><a href="/Home/Work" style="color:cadetblue">How It Works</a></li>
+                        <li><a href="/Home/SiteRules" style="color:cadetblue">Site Rules</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="margin:auto">
+                    <ul>
+                        <li><h4 style="color:white">Stay Connected</h4></li>
+                        <br />
+                        <br />
+                        <li><h4 style="color:white">Bid Safely on BidFor Good</h4></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".fancybox").fancybox()
+        });
+    </script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

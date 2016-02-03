@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Setting";
+    Layout = "~/Views/Shared/Profile.cshtml";
+}
+@model Shopping_And_Bidding.Models.user
+   <body>
+    <div style="margin-top:40px">
+        <h3>Profile Setting</h3>
+        <p style="color:darkslategrey">here you can change your profile</p>
+        <section>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-5">
+                </div>
+                <div class="col-md-7">
+                    <table border="1" width="400" height="100">
+                        <thead>
+                            <h3>User Information</h3>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>@Model.name</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>@Model.email</td>
+                            </tr>
+                            <tr>
+                                <td>DOB</td>
+                                <td>@Model.DOB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="/User/Edit/@Model.Uid"><input type="submit" value="Update" class="btn btn-default" /></a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>

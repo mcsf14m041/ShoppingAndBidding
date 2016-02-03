@@ -1,0 +1,85 @@
+﻿@using Shopping_And_Bidding.Models;
+@{
+    ViewBag.Title = "How It Works";
+    if ((user)Session["user"] != null)
+    {
+        Layout = "~/Views/Shared/Profile.cshtml";
+    }
+    else if ((user)Session["user"] == null)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<header>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-3">
+            <a href="/User/Index">
+                <img src="~/Images/Bidding-for-Good-Logo[1].jpg"
+                     style="border-radius:20px;border:solid"
+                     width="150px" height="125px" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="wrapper" style="margin-top:5px">
+                <div class="bannerad">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:100px"
+                         data-ad-client="ca-pub-4560135486422930"
+                         data-ad-slot="8876535802"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <br />
+    <div class="row">
+        <div class="col-md-7" style="margin:auto">
+            <h2>New To BidForGood?</h2>
+            <br /><h3 style="color:darkorange">How does BidForGood work?</h3>
+            <p>Bids cost just $0.60 and can be purchased in bid packs at the Bid Store or in the QBar. These bids are pre-paid and stored in the Bid Credit History section of My BidForGood. Each time you place a bid; it will be deducted from your remaining bids, and will increase the price of the auction by one cent. . No more than 20 seconds is added to the timer whenever a bid is placed. This allows another user the opportunity to bid if interested. It's just like the auctioneer shouting “Going once...Going twice...SOLD!” at a traditional auction.
+
+And also just like a traditional auction, you win by being the last to bid. Once you pay the final auction price and shipping costs, the item is yours!
+
+Here's the part that isn't like a traditional auction: If you don't win, you can't reclaim the bids you place. BUT, because we never want anyone to walk away with nothing, we offer a Buy Now feature on ALL of our auctions! When you use our Buy Now feature, we subtract the cash value of the bids you’ve placed (excluding voucher bids) from the value price of the item, and you pay the difference. It's just like buying the item at retail price! So at least you had a chance at getting it at a discount, eh?
+
+Let's say you spend 30 bids trying to win a $30 valued product, but you don't win. Your 30 bids are worth $18 (30 x $0.60), so if you choose to use the Buy Now, you will only pay $12 more for the product. Please note that this offer applies to real bids only, and that voucher bids to do not apply to the Buy Now option.
+
+It’s also important to note that (except for Voucher Bid and Limit Buster auctions) BidForGood auctions aren’t limited to single items. A BidForGood auction allows customers to pick from a list of comparably priced products, which you may finalize at checkout. Be sure to shop the complete list of available products for the one that’s just right for you.</p>
+            <br /><h3 style="color:darkorange">What is Buy Now?</h3>
+            <p>With Buy Now, you can purchase any product at any time during the auction and up to 2 hours after the auction is over by clicking the Buy Now button on the auction page. The value of any Real Bids* placed in an auction will be applied to the value price*. Voucher Bids used in an auction will not count toward the Buy Now price. Buy Now purchases don't count toward your daily or 28-day win limit. Because there's no limit to the Buy Now feature, the auction will continue even if a user chooses to Buy Now.
+
+You must bid at least once in an auction in order to use the Buy Now option. The Buy Now price will never fall below $0.00 because BidForGood prevents users from spending more in Real Bids than the item's value price. For example, you can't place $110 worth of Real Bids in an auction for an item with a $100 value price. On BidForGood, you will never pay more than the value price for a product you want. If a user chooses to Buy Now, they can pick from any of BidForGood' amazing products that are available in that particular auction.
+
+Below is an example of how your discount for Buy Now is calculated.
+
+Value Price:                                                                    $100.00
+Discount: Real Bids Placed x Bid Price:  100 x $0.60 =      $60.00
+Buy Now Price: + Shipping/Taxes (if applicable)          $40.00
+
+</p>
+            <br /><h3 style="color:darkorange">What's the best way to win an auction?</h3>
+            <p>Everyone wants to know how to improve their chances of winning an auction on BidForGood. There isn't a guaranteed winning strategy, but we'll offer you a few tips to help get you started:
+
+Place your bid within the last 15 seconds
+By placing a bid in the last few seconds, you know the time will reset and you'll become the highest bidder. If someone else bids, time will be added and you'll get another chance to bid.
+
+Bid on the cheapest products
+You can get some great deals on our most expensive items. However, these items also tend to generate the most competitive auctions.  Fewer bidders bid on cheaper items, meaning that you are much more likely to win.
+
+Protect yourself with Bid-O-Matic
+Bid-O-Matic is a powerful tool when using strategic limits. It can scare away the other bidders because they know that the Bid-O-Matic will always place bids to keep you on top. Your chances of winning are increased, and they know it- which may help you intimidate your competition.
+
+Turn your opponents' Bid-O-Matics against each other
+Some people set the Bid-O-Matic and forget about it. It is easy to win if your competition has stepped away from the computer with the assumption that their Bid-O-Matic will fully protect them. We’ve noticed that users tend to set the "Bid From" value of their Bid-O-Matic to a round number, so use this to your advantage. Wait for a round number and place a single bid after it on the off-chance that the Bid-O-Matic has reached its limit.</p>
+            <br /><h3 style="color:darkorange">Can everyone be a winner?</h3>
+            <p>Yes! Even if you don't win the auction, you'll never have to walk away with nothing. Any time after you've placed your first bid in an auction, you may choose to buy the product at a discount using the Buy Now feature. You'll never have to pay more than the Value Price for any products on BidForGood. But not everyone will win the auction at a large discount</p>
+            <br /><h3 style="color:darkorange">Are products brand-new?</h3>
+            <p>All products on BidForGood are brand-new and factory sealed!</p>
+        </div>
+    </div>
+</section>

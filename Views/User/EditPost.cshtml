@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "EditPost";
+    Layout = "~/Views/Shared/Profile.cshtml";
+}
+@model Shopping_And_Bidding.Models.Post
+<body>
+    <div style="margin-top:40px">
+        <h3>Post Update</h3>
+        <p style="color:darkslategrey">here you can change your profile</p>
+        <section>
+            <br /><br />
+            <form class="form-horizontal" method="post" action="/User/SaveChange/@Model.PtId">
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="hidden" class="form-control" name="PtId" id="PtId" value="@Model.PtId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTitle3" class="col-sm-2 control-label">Title</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Title" id="Title" value="@Model.Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputcatagory3" class="col-sm-2 control-label">Select Catagory</label>
+                    <div class="col-sm-10">
+                        <select id="ctgry" name="Catagory">
+                            <option value="0">-Select-</option>
+                            <option value="Mobile">Mobiles</option>
+                            <option value="Laptop">Laptops</option>
+                            <option value="Electronic">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputpassword3" class="col-sm-2 control-label">Price</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="price" id="price" value="@Model.Price">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" style="background-color:darkorange;color:whitesmoke">Update</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        </div>
+</body>

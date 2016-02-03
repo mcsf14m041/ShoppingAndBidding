@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "ShowPost";
+    Layout = "~/Views/Shared/Profile.cshtml";
+}
+@model Shopping_And_Bidding.Models.Post
+
+<header>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-3">
+            <a href="/User/Index">
+                <img src="~/Images/Bidding-for-Good-Logo[1].jpg"
+                     style="border-radius:20px;border:solid"
+                     width="150px" height="125px" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="wrapper" style="margin-top:5px">
+                <div class="bannerad">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:100px"
+                         data-ad-client="ca-pub-4560135486422930"
+                         data-ad-slot="8876535802"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <br /><br />
+    <div class="row">
+        <div class="col-md-3" style="margin:auto;border:dotted;border-radius:10px;border-width:1px">
+            <h4 style="color:crimson;margin-left:30%">@Model.Title</h4>
+            <img style="margin-left:10%" src="~/Images/@Model._Image" width="200px" height="200px" /><br />
+            <h4 style="color:coral;margin-left:30%">@Model.Price</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:30%" class="btn btn-default"</a>
+        </div>
+        </div>
+</section>

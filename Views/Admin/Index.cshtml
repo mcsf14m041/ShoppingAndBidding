@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "BidsForGood";
+    Layout = "~/Views/Shared/Profile.cshtml";
+}
+@{
+    user u = (user)Session["user"];
+}
+@using Shopping_And_Bidding.Models
+<body>
+    <h2 style="font-family:'Times New Roman';font-weight:bolder;color:darkorange;margin-top:40px">Admin Management</h2>
+    <div style="margin-top:50px;margin-left:38%">
+        <a href="/Admin/Users"><input type="submit" style="background-color:royalblue;color:white;margin-right:50%;font-family:'Times New Roman';font-size:x-large;width:250px;height:100px" value=" Manage Users " class="btn btn-default" /></a>
+        <a href="/Admin/Product"><input type="submit" style="background-color:royalblue;color:white;margin-right:50%;font-family:'Times New Roman';font-size:x-large;width:250px;height:100px" value=" Manage Products " class="btn btn-default" /></a>
+        <a href="/Admin/Post"><input type="submit" style="background-color:royalblue;color:white;margin-right:50%;font-family:'Times New Roman';font-size:x-large;width:250px;height:100px" value=" Manage Posts " class="btn btn-default" /></a>
+        <a href="/User/Setting/@u.Uid"><input type="submit" style="background-color:royalblue;color:white;margin-right:50%;font-family:'Times New Roman';font-size:x-large;width:250px;height:100px" value=" Manage Profile " class="btn btn-default" /></a>
+    </div>
+</body>
+@*<header>
+    <div class="row" style="margin-top:30px">
+        <div class="col-md-4" style="margin-left:auto">
+            <a href="/Home">
+                <img src="~/Images/Bidding-for-Good-Logo[1].jpg"
+                     style="border-radius:20px;border:solid"
+                     width="200px" height="170px" />
+            </a>
+        </div>
+        <div class="col-md-8">
+            <div class="wrapper" style="margin-top:10px">
+                <div class="bannerad">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:100px"
+                         data-ad-client="ca-pub-4560135486422930"
+                         data-ad-slot="8876535802"></ins>
+                    <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:auto">
+        <div class="nav navbar col-lg-12 col-lg-offset-0" style="border-radius:10px;border:solid;border-width:1px;background-color:#5b5353">
+            <ul class="nav navbar-nav glyphicon-triangle-bottom">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" style="margin-left:30px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:royalblue">Mobile <span class="caret"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="/Product/Sony">Sony Mobile</a></li>
+                        <li><a href="/Product/Lg">Lg Mobile</a></li>
+                        <li><a href="/Product/Apple">Apple Mobile</a></li>
+                        <li><a href="/Product/Samsung">Samsung Mobile</a></li>
+                        <li><a href="/Product/HTC">HTC Mobile</a></li>
+                        <li><a href="/Product/Huawei">Huawei Mobile</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:royalblue">Laptops&Tablets <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Product/DELL">Dell Laptops</a></li>
+                        <li><a href="/Product/HP">Hp Laptops</a></li>
+                        <li><a href="/Product/ACCER">Accer Laptops</a></li>
+                        <li><a href="/Product/LENEVO">Lenevo Laptops</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:royalblue">Electronics <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Product/AirConditioner">Air Conditioner</a></li>
+                        <li><a href="/Product/Refrigrator">Refrigrator</a></li>
+                        <li><a href="/Product/LEDTV">LED TV</a></li>
+                        <li><a href="/Product/Fan">Fans</a></li>
+                        <li><a href="/Product/Kitchen">Kitchen Items</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:royalblue">Fashion <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Product/Shoes">Shoes</a></li>
+                        <li><a href="/Product/Jewellery">Jewellery</a></li>
+                        <li><a href="/Product/Watch">Watch</a></li>
+                        <li><a href="/Product/Tshirts">T-shirts</a></li>
+                        <li><a href="/Product/Bag">Bags & Luggage</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/Images/newPhone.jpg" alt="Phones">
+            </div>
+
+            <div class="item">
+                <img src="~/Images/suit.jpg" alt="Suit">
+            </div>
+
+            <div class="item">
+                <img src="~/Images/laptops.jpg" alt="Laptops">
+            </div>
+
+            <div class="item">
+                <img src="~/Images/electronics.png" alt="Electronics">
+            </div>
+            <div class="item">
+                <img src=" ~/Images/Tab.jpg" alt="Tabs">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+<section>
+    <h3 style="color:lightcoral">Live Auction</h3>
+    <div class="row">
+        <div class="col-md-3" style="margin:auto;border:dotted;border-width:1px;border-radius:10px;border-color:black">
+            <h4 style="color:crimson;margin-left:60px">Iphone 5s</h4>
+            <img src="~/Images/topic_iphone_5[1].png" width="200px" height="200px" /><br />
+            <h4 style="color:coral;margin-left:65px">$150.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3" style="margin:auto;border:dotted;border-width:1px;border-radius:10px;border-color:black">
+            <h4 style="color:crimson">Hp 1000</h4>
+            <img src="~/Images/112253871_3GG[1].jpg" width="200px" height="200px" /><br />
+            <h4 style="color:coral">$250.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3">
+            <h4 style="color:crimson">Galaxy Tab-3</h4>
+            <img src="~/Images/Samsung-to-Release-Galaxy-Tab-3-Lite-Galaxy-Tab-Pro-8-4-10-1-and-Galaxy-Note-Pro-12-2-in-Q1-2014-411121-2[1].jpg" width="200px" height="200px" />
+            <br />
+            <h4 style="color:coral">$200.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3">
+            <h4 style="color:crimson">Dawlence Oven</h4>
+            <img src="~/Images/Dawlance-DW115-CHZ-500x500[1].jpg" width="200px" height="200px" />
+            <br />
+            <h4 style="color:coral">$80.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+    </div><br />
+    <div class="row" style="background-color:wheat">
+        <div class="col-md-3" style="margin:auto">
+            <h4 style="color:crimson">Metal Watch</h4>
+            <img src="~/Images/Asus-Zenwatch-2-metal[1].jpg" width="200px" height="200px" /><br />
+            <h4 style="color:coral">$100</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3">
+            <h4 style="color:crimson">Gold Plated Set</h4>
+            <img src=" ~/Images/bridal jewellery set images-1[1].jpg" width="200px" height="200px" /><br />
+            <h4 style="color:coral">$500.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3">
+            <h4 style="color:crimson">Galaxy S6 Edge</h4>
+            <img src="~/Images/imagesEUAWLT9J.jpg" width="200px" height="200px" />
+            <br />
+            <h4 style="color:coral">$400.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+        <div class="col-md-3">
+            <h4 style="color:crimson">Bag</h4>
+            <img src=" ~/Images/thNR42UPM0.jpg" width="200px" height="200px" />
+            <br />
+            <h4 style="color:coral">$15.0</h4>
+            <a href="#"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:60px" class="btn btn-default"</a>
+        </div>
+    </div>
+</section>*@

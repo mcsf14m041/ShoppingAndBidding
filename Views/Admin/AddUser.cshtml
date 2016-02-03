@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "AddUser";
+}
+<div style="margin-top:40px">
+    <header>
+        <h1 style="text-align:center;color:darkorange">New User</h1>
+    </header>
+    <section>
+        <br /><br />
+        <form class="form-horizontal" method="post" action="/Admin/SaveUser">
+            <div class="form-group">
+                <label for="inputName3" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" required="required" class="form-control" name="name" id="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputpassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" required="required" name="password" class="form-control" id="p" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputpassword3" class="col-sm-2 control-label">Confirm Password</label>
+                <div class="col-sm-10">
+                    <input type="password" required="required" name="Confirm Password" class="form-control" id="cp" placeholder="Confirm Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" required="required" name="email" class="form-control" id="e" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDOB3" class="col-sm-2 control-label">DOB</label>
+                <div class="col-sm-10">
+                    <input type="date" required="required" name="DOB" class="form-control" value="2" id="DOB">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputphone3" class="col-sm-2 control-label">Phone_No</label>
+                <div class="col-sm-10">
+                    <input type="text" required="required" name="phone_no" class="form-control" id="p" placeholder="cellphone number">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="hidden" name="Role" class="form-control" value="2" id="role" placeholder="Role">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <script>
+        $("#cp").focusout(function () {
+            var a = document.getElementById("p");
+            var b = document.getElementById("cp");
+            if (a.value != b.value) {
+                alert("Password not Matched");
+            }
+        })
+        $("#e").focusout(function () {
+            var a = document.getElementById("e").value;
+            if (!a.contains(".com") || !a.contains(".pk")) {
+                alert("Invalid Email");
+            }
+        })
+    </script>
+    </div>

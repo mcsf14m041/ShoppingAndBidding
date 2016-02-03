@@ -1,0 +1,30 @@
+﻿@using Shopping_And_Bidding.Models
+@model IEnumerable<Shopping_And_Bidding.Models.Post>
+
+<div class="row" style="margin:auto">
+    @if (Model.Count()==0)
+    {
+        <h2 style="color:red;">No result found</h2>
+    }
+    @foreach (Post p in Model)
+    {
+        <div onload="f2()" id="post_data" class="col-md-3" style="margin:auto;border:dotted;border-radius:10px;border-width:1px">
+            <h4 style="color:crimson;margin-left:30%">@p.Title</h4>
+            <a class="fancybox" rel="group" href="~/Images/@p._Image">
+                <img style="margin-left:10%" src="~/Images/@p._Image" width="200px" height="200px" />
+            </a><br />
+            <h2 id="showtime" class="counter" style="color:red;margin-left:20%"></h2>
+            <div id="pricediv_@p.PtId">
+                <h3 id="price_@(p.PtId)" style="color:green;margin-left:27%">Rs.@p.Price</h3>
+            </div>
+            @if ((user)Session["user"] != null)
+            {
+                <button type="button" style="background-color:darkorange;color:whitesmoke;margin-left:30%" class="addpost btn btn-default panel-footer" data-toggle="modal" data-id="@p.PtId" data-target="#myModal"> BidNow </button>
+            }
+            else if ((user)Session["user"] == null)
+            {
+                <a href="/Login/Login"><input type="button" value="BidNow" style="background-color:darkorange;color:white;margin-left:30%" class="btn btn-default" /></a>
+            }
+        </div>
+    }
+</div>
